@@ -154,13 +154,20 @@ Grafana: 10.42.10.81:31455
 ## Install Robusta
 
 Using Robusta we can extends Prometheus/VictoriaMetrics/Coralogix (and more) with features like:
-**Smart Grouping** - reduce notification spam with Slack threads 🧵
+**Smart Grouping** - reduce notification spam with Slack threads
+
 **AI Investigation** - Kickstart your alert investigations with AI (optional)
+
 **Alert Enrichment** - see pods log and other data alongside your alerts
+
 **Self-Healing** - define auto-remediation rules for faster fixes
+
 **K8s Problem-Detection** - alert on OOMKills or failing Jobs without PromQL
+
 **Change Tracking** - correlate alerts and Kubernetes rollouts
+
 **Auto-Resolve** - send alerts, resolve them when updated (e.g. in Jira)
+
 **Dozens of Integrations** - Slack, Teams, Jira, and more
 
 
@@ -208,12 +215,28 @@ kubectl get pods -A | grep robusta
  ```
  
  
+ ### Uses Cases
+
+ #### Crashloopback event with detailed logs 
+
+ In this case i got a slack notification with pod is in CrashLoopBackOff with detailed logs about the reason.
+
+![ Alt Text](./uc-1.png)
+
+ #### Pod is evicted with OOM
+
+In this case got a slack notification when pod is evicted with OOM and also got logs, screenshot from prometheus about the memeory consumption of the system and the pod.
+
+![ Alt Text](./uc-2.1.png)
+![ Alt Text](./uc-2.2.png)
+![ Alt Text](./uc-2.3.png)
  
+
+There are other use cases i need to test below is the list 
  
- 
- 
- 
- 
+- Enchrich slack with custom robusta playbooks
+- Add custom rules in prometheus 
+- Auto Resolve etc.
  
  
  
